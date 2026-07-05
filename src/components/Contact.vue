@@ -8,9 +8,9 @@ useScrollAnimation(root)
 
 // 社交链接配置，方便后续修改
 const links = [
-  { label: '邮箱', value: 'hello@example.com', href: 'mailto:hello@example.com' },
-  { label: 'GitHub', value: 'github.com/yourname', href: 'https://github.com/' },
-  { label: 'Twitter', value: '@yourname', href: 'https://twitter.com/' },
+  { label: '邮箱', value: '1398838410@qq.com', href: 'mailto:1398838410@qq.com' },
+  { label: 'GitHub', value: 'github.com/Astronaut224', href: 'https://github.com/Astronaut224' },
+  { label: 'Bilibili', value: '@三下余杭', href: 'https://space.bilibili.com/344469751?spm_id_from=333.1007.0.0' },
 ]
 </script>
 
