@@ -32,3 +32,4 @@ pnpm-debug.log*
 
 # Vite 缓存
 .vite/
+.vercel
