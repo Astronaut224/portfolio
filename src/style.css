@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+/* 深色主题基础变量与渐变强调色 */
+@theme {
+  --color-bg: #0a0a0a;
+  --color-accent-from: #6366f1;
+  --color-accent-via: #a855f7;
+  --color-accent-to: #ec4899;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* 渐变文字工具类 */
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-accent-from),
+    var(--color-accent-via),
+    var(--color-accent-to)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* 滚动进入动画：由 useScrollAnimation 通过 .is-visible 切换 */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 尊重用户的减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

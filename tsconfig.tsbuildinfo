@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/composables/usescrollanimation.ts","./src/data/projects.ts","./src/data/skills.ts","./src/app.vue","./src/components/about.vue","./src/components/appfooter.vue","./src/components/appheader.vue","./src/components/contact.vue","./src/components/hero.vue","./src/components/projects.vue","./vite.config.ts"],"version":"5.6.3"}
