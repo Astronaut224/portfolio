@@ -1,4 +1,4 @@
-﻿# 🛰️ 个人作品集 Portfolio
+# 🛰️ 个人作品集 Portfolio
 
 ![Version](https://img.shields.io/badge/version-0.1.0-00F0FF?style=flat-square)
 ![Vue](https://img.shields.io/badge/Vue-3.5-42b883?style=flat-square)
@@ -36,7 +36,9 @@ flowchart LR
   style R fill:#161A1E,stroke:#B026FF,color:#E8EDF5
 ```
 
-> 截图待补充（深色首页 / 浅色首页 / 主题切换交互）。截图请置于 `./screenshots/`，推荐命名：`dark.png`、`light.png`、`theme-toggle.png`。
+<img src="./screenshots/light.png" alt="image" style="zoom: 25%;" />
+
+<img src="./screenshots/dark.png" alt="image" style="zoom:25%;" />
 
 ## 🎨 主题设计
 
