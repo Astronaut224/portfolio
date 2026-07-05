@@ -1,44 +1,63 @@
 ﻿@import 'tailwindcss';
 
-/* 语义颜色 token：浅色为默认值 */
+/* 语义颜色 token：浅色（极简苹果风）为默认值 */
 @theme {
-  /* 页面背景 */
+  /* 背景层 */
   --color-bg: #ffffff;
-  /* 主文字 */
-  --color-fg: #0a0a0a;
-  /* 次要文字 */
-  --color-muted: #4b5563;
-  /* 暗淡文字 */
-  --color-faint: #9ca3af;
-  /* 弱填充背景 */
-  --color-surface: #f3f4f6;
-  /* 悬停填充背景 */
-  --color-surface-2: #e5e7eb;
-  /* 常规边框 */
-  --color-line: #e5e7eb;
-  /* 强调边框 */
-  --color-line-strong: #d1d5db;
-  /* 卡片悬停阴影 */
-  --color-shadow: rgba(15, 23, 42, 0.08);
+  --color-bg-soft: #f5f5f7;
+  /* 文字 */
+  --color-fg: #1c1c1e;
+  --color-muted: #8e8e93;
+  --color-faint: #8e8e93;
+  /* 表面 */
+  --color-surface: #f5f5f7;
+  --color-surface-2: #e8e8ed;
+  /* 边框 */
+  --color-line: rgba(0, 0, 0, 0.06);
+  --color-line-strong: rgba(0, 0, 0, 0.12);
+  /* 卡片 */
+  --color-card-bg: rgba(255, 255, 255, 0.7);
+  --color-card-border: rgba(0, 0, 0, 0.06);
+  /* 主色与点缀 */
+  --color-primary: #007aff;
+  --color-primary-fg: #ffffff;
+  --color-accent: #8e8e93;
+  /* 阴影与发光 */
+  --color-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  --color-shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --color-glow: 0 0 0 rgba(0, 0, 0, 0);
 
-  /* 渐变强调色（深浅共用） */
-  --color-accent-from: #6366f1;
-  --color-accent-via: #a855f7;
-  --color-accent-to: #ec4899;
+  /* 保留兼容旧调用（渐变强调色，浅色下不再使用） */
+  --color-accent-from: #007aff;
+  --color-accent-via: #007aff;
+  --color-accent-to: #007aff;
 }
 
-/* 深色主题：.dark 作用在 <html> 上时整体覆盖语义 token */
+/* 深色主题：.dark 作用在 <html> 上时整体覆盖（未来赛博风） */
 @layer base {
   .dark {
     --color-bg: #0a0a0a;
-    --color-fg: #ffffff;
-    --color-muted: #a3a3a3;
-    --color-faint: #737373;
-    --color-surface: #1a1a1a;
-    --color-surface-2: #262626;
-    --color-line: #1f1f1f;
-    --color-line-strong: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-bg-soft: #0b0e14;
+    --color-fg: #e8edf5;
+    --color-muted: #7a8ba8;
+    --color-faint: #5a6b85;
+    --color-surface: #161a1e;
+    --color-surface-2: #1f2630;
+    --color-line: rgba(0, 255, 255, 0.12);
+    --color-line-strong: rgba(0, 255, 255, 0.25);
+    --color-card-bg: #161a1e;
+    --color-card-border: rgba(0, 255, 255, 0.15);
+    --color-primary: #00f0ff;
+    --color-primary-fg: #0a0a0a;
+    --color-accent: #b026ff;
+    --color-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --color-shadow-hover: 0 0 30px rgba(0, 240, 255, 0.3);
+    --color-glow: 0 0 30px rgba(0, 240, 255, 0.3);
+
+    /* 深色强调色用青→蓝渐变 */
+    --color-accent-from: #00f0ff;
+    --color-accent-via: #00b0ff;
+    --color-accent-to: #0055ff;
   }
 }
 
@@ -49,20 +68,78 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 400;
 }
 
-/* 渐变文字工具类 */
+/* 标题用 Semibold */
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+/* 渐变文字工具类：浅色下退化为纯蓝实色，深色下为青→蓝渐变 */
 .text-gradient {
-  background-image: linear-gradient(
-    to right,
-    var(--color-accent-from),
-    var(--color-accent-via),
-    var(--color-accent-to)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--color-primary);
+  background-image: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+@layer base {
+  .dark .text-gradient {
+    color: transparent;
+    background-image: linear-gradient(to right, #00f0ff, #0055ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* 主按钮：浅色纯蓝实色，深色青→蓝渐变 + 发光 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-fg);
+  box-shadow: var(--color-shadow);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--color-shadow-hover);
+  filter: brightness(1.05);
+}
+
+@layer base {
+  .dark .btn-primary {
+    background-image: linear-gradient(to right, #00f0ff, #0055ff);
+    background-color: transparent;
+    color: #001018;
+    box-shadow: var(--color-glow);
+  }
+  .dark .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.5);
+    filter: brightness(1.1);
+  }
+}
+
+/* 卡片：毛玻璃 + 主题化边框/阴影，hover 发光但不平移 */
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: var(--color-shadow);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-line-strong);
+  box-shadow: var(--color-shadow-hover);
 }
 
 /* 滚动进入动画：由 useScrollAnimation 通过 .is-visible 切换 */
@@ -96,6 +173,37 @@ body {
   transform: translateY(0) scale(1);
 }
 
+/* 主题切换过渡：除入场动画外的属性丝滑过渡 */
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* 深色滚动条：深底亮青滑块 */
+@layer base {
+  .dark::-webkit-scrollbar {
+    width: 10px;
+  }
+  .dark::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .dark::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.4);
+    border-radius: 5px;
+  }
+  .dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.6);
+  }
+}
+
+.dark {
+  scrollbar-color: rgba(0, 240, 255, 0.4) transparent;
+  scrollbar-width: thin;
+}
+
 /* 尊重用户的减少动画偏好 */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
@@ -107,6 +215,9 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  * {
+    transition: none !important;
   }
   html {
     scroll-behavior: auto;

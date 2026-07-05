@@ -29,7 +29,7 @@ const { isDark, toggle } = useTheme()
         <li v-for="item in navItems" :key="item.href">
           <a
             :href="item.href"
-            class="text-muted transition-colors hover:text-fg"
+            class="text-muted transition-colors hover:text-[var(--color-primary)]"
           >
             {{ item.label }}
           </a>
@@ -39,7 +39,7 @@ const { isDark, toggle } = useTheme()
       <!-- 主题切换按钮 -->
       <button
         type="button"
-        class="inline-flex h-9 w-9 items-center justify-center rounded-md text-fg hover:bg-surface transition-colors"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-md text-fg transition-all hover:bg-surface hover:shadow-[var(--color-glow)]"
         :aria-label="isDark ? '切换到浅色主题' : '切换到深色主题'"
         @click="toggle"
       >
@@ -57,7 +57,7 @@ const { isDark, toggle } = useTheme()
       <!-- 移动端菜单按钮 -->
       <button
         type="button"
-        class="sm:hidden inline-flex h-9 w-9 items-center justify-center rounded-md text-fg hover:bg-surface"
+        class="sm:hidden inline-flex h-9 w-9 items-center justify-center rounded-md text-fg transition-colors hover:bg-surface"
         :aria-expanded="menuOpen"
         aria-label="切换菜单"
         @click="menuOpen = !menuOpen"
@@ -79,7 +79,7 @@ const { isDark, toggle } = useTheme()
       <li v-for="item in navItems" :key="item.href" class="py-2">
         <a
           :href="item.href"
-          class="text-muted transition-colors hover:text-fg"
+          class="text-muted transition-colors hover:text-[var(--color-primary)]"
           @click="menuOpen = false"
         >
           {{ item.label }}

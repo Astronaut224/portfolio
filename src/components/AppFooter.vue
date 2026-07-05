@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
       <p class="text-sm text-faint">&copy; {{ year }} 张三. 保留所有权利。</p>
       <a
         href="#home"
-        class="text-sm text-fg transition-colors hover:text-muted"
+        class="text-sm text-fg transition-colors hover:text-[var(--color-primary)]"
       >
         回到顶部 &uarr;
       </a>

@@ -26,7 +26,7 @@ useScrollAnimation(root)
       <div
         v-for="(group, i) in skills"
         :key="group.category"
-        class="reveal-card rounded-xl border border-line p-6 transition-all hover:border-line-strong hover:shadow-[var(--color-shadow)]"
+        class="reveal-card card rounded-2xl p-6"
         :style="{ '--reveal-delay': (i * 90) + 'ms' }"
       >
         <h3 class="text-lg font-semibold text-fg">{{ group.category }}</h3>

@@ -12,7 +12,7 @@
       src="https://avatars.githubusercontent.com/u/48404676"
       alt="个人头像"
       loading="lazy"
-      class="h-40 w-40 rounded-full border-2 border-line object-cover shadow-lg shadow-purple-500/10"
+      class="h-40 w-40 rounded-full border-2 border-line object-cover shadow-[var(--color-shadow)]"
     />
 
     <h1 class="mt-8 text-4xl font-extrabold sm:text-6xl">
@@ -27,13 +27,13 @@
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a
         href="#projects"
-        class="rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-medium transition-transform hover:scale-105"
+        class="btn-primary rounded-xl px-6 py-3 text-sm font-medium"
       >
         查看项目
       </a>
       <a
         href="#contact"
-        class="rounded-lg border border-line-strong px-6 py-3 text-sm font-medium text-fg transition-colors hover:bg-surface"
+        class="rounded-xl border border-line-strong px-6 py-3 text-sm font-medium text-fg transition-colors hover:bg-surface"
       >
         联系我
       </a>

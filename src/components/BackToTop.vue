@@ -33,7 +33,7 @@ onUnmounted(() => {
   <button
     v-if="visible"
     type="button"
-    class="fixed right-6 bottom-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg/80 text-fg shadow-[var(--color-shadow)] backdrop-blur transition-all hover:bg-surface"
+    class="card fixed right-6 bottom-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full text-fg transition-all"
     aria-label="返回顶部"
     @click="scrollToTop"
   >

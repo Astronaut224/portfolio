@@ -18,7 +18,7 @@ useScrollAnimation(root)
       <article
         v-for="(project, i) in projects"
         :key="project.id"
-        class="reveal-card group overflow-hidden rounded-xl border border-line transition-all hover:border-line-strong hover:shadow-[var(--color-shadow)]"
+        class="reveal-card card group overflow-hidden rounded-2xl"
         :style="{ '--reveal-delay': (i * 120) + 'ms' }"
       >
         <!-- 项目截图（懒加载） -->

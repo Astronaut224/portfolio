@@ -28,7 +28,7 @@ const links = [
         :href="item.href"
         target="_blank"
         rel="noopener noreferrer"
-        class="reveal-card flex min-w-[160px] flex-col rounded-xl border border-line p-4 transition-all hover:border-line-strong hover:bg-surface hover:shadow-[var(--color-shadow)]"
+        class="reveal-card card flex min-w-[160px] flex-col rounded-2xl p-5 hover:bg-surface"
         :style="{ '--reveal-delay': (i * 90) + 'ms' }"
       >
         <span class="text-sm font-medium text-gradient">{{ item.label }}</span>
