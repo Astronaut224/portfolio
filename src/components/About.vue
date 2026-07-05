@@ -23,7 +23,12 @@ useScrollAnimation(root)
 
     <!-- 技能列表 -->
     <div class="mt-12 grid gap-8 sm:grid-cols-3">
-      <div v-for="group in skills" :key="group.category" class="rounded-xl border border-line p-6">
+      <div
+        v-for="(group, i) in skills"
+        :key="group.category"
+        class="reveal-card rounded-xl border border-line p-6 transition-all hover:border-line-strong hover:shadow-[var(--color-shadow)]"
+        :style="{ '--reveal-delay': (i * 90) + 'ms' }"
+      >
         <h3 class="text-lg font-semibold text-fg">{{ group.category }}</h3>
         <ul class="mt-4 flex flex-wrap gap-2">
           <li

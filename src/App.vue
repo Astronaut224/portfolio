@@ -5,6 +5,7 @@ import About from '@/components/About.vue'
 import Projects from '@/components/Projects.vue'
 import Contact from '@/components/Contact.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import BackToTop from '@/components/BackToTop.vue'
 
 // 根组件：组合各个区块组件
 </script>
@@ -19,5 +20,6 @@ import AppFooter from '@/components/AppFooter.vue'
       <Contact />
     </main>
     <AppFooter />
+    <BackToTop />
   </div>
 </template>

@@ -23,12 +23,13 @@ const links = [
 
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a
-        v-for="item in links"
+        v-for="(item, i) in links"
         :key="item.label"
         :href="item.href"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex min-w-[160px] flex-col rounded-xl border border-line p-4 transition-colors hover:border-line-strong hover:bg-surface"
+        class="reveal-card flex min-w-[160px] flex-col rounded-xl border border-line p-4 transition-all hover:border-line-strong hover:bg-surface hover:shadow-[var(--color-shadow)]"
+        :style="{ '--reveal-delay': (i * 90) + 'ms' }"
       >
         <span class="text-sm font-medium text-gradient">{{ item.label }}</span>
         <span class="mt-1 text-sm text-faint">{{ item.value }}</span>
