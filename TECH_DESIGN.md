@@ -9,17 +9,17 @@
 ## 项目结构
 src/
   components/
-    Header.tsx
-    Hero.tsx
-    About.tsx
-    Projects.tsx
-    Contact.tsx
-    Footer.tsx
+    Header.vue
+    Hero.vue
+    About.vue
+    Projects.vue
+    Contact.vue
+    Footer.vue
   data/
     projects.ts
     skills.ts
-  App.tsx
-  main.tsx
+  App.vue
+  main.ts
 
 ## 数据管理
 - 项目数据和技能数据存储在 TypeScript 文件中

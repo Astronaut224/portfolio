@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description: '使用 Vue + Tailwind CSS 构建的个人作品集网站，支持深色主题与流畅滚动动画。',
     image: 'https://placehold.co/600x360/0a0a0a/6366f7?text=Portfolio',
     stack: ['Vue', 'TypeScript', 'Tailwind CSS'],
-    link: 'https://github.com/',
+    link: 'https://github.com/Astronaut224/portfolio',
   },
   {
     id: 2,
