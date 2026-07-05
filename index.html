@@ -1,13 +1,19 @@
-<!doctype html>
-<html lang="zh-CN" class="scroll-smooth">
+﻿<!doctype html>
+<html lang="zh-CN" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="个人作品集 - Vue + TypeScript + Tailwind CSS" />
     <title>个人作品集</title>
+    <script>
+      // 默认深色；仅当用户已显式存过 light 时切回浅色，避免首帧闪烁（在 Vue 加载前同步执行）
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
-  <body class="bg-[#0a0a0a] text-white antialiased">
+  <body class="bg-bg text-fg antialiased">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -8,12 +8,13 @@ const isDark = ref(false)
 
 /**
  * 启动时同步应用 localStorage 中存储的主题。
- * 必须在 Vue mount 之前调用，避免深色用户看到浅色闪烁。
+ * 必须在 Vue mount 之前调用，避免用户看到非预期主题闪烁。
+ * 默认深色：无存储或存储非 light 时均为深色，仅显式存 light 才为浅色。
  */
 export function applyStoredTheme(): void {
   const stored = localStorage.getItem(THEME_KEY)
-  // 默认浅色：无存储时不加 .dark
-  const dark = stored === 'dark'
+  // 默认深色：只有显式存了 light 才不加 .dark
+  const dark = stored !== 'light'
   document.documentElement.classList.toggle('dark', dark)
   isDark.value = dark
 }
