@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 // 首页 Hero 区：大标题 + 简介 + 头像
 </script>
 
@@ -9,18 +9,18 @@
   >
     <!-- 头像（懒加载） -->
     <img
-      src="https://placehold.co/160x160/0a0a0a/6366f7?text=Avatar"
+      src="https://avatars.githubusercontent.com/u/48404676"
       alt="个人头像"
       loading="lazy"
-      class="h-40 w-40 rounded-full border-2 border-white/10 object-cover shadow-lg shadow-purple-500/10"
+      class="h-40 w-40 rounded-full border-2 border-line object-cover shadow-lg shadow-purple-500/10"
     />
 
     <h1 class="mt-8 text-4xl font-extrabold sm:text-6xl">
-      你好，我是 <span class="text-gradient">张三</span>
+      你好，我是 <span class="text-gradient">王宇航</span>
     </h1>
 
-    <p class="mt-6 max-w-2xl text-base text-white/70 sm:text-lg">
-      全栈开发者，热爱用代码构建简洁而优雅的产品。专注于前端工程化、用户体验与性能优化。
+    <p class="mt-6 max-w-2xl text-base text-muted sm:text-lg">
+      技术开发者，热爱用代码构建简洁而优雅的产品。关注科技互联网、AI和跨学科阅读写作。
     </p>
 
     <!-- CTA 按钮 -->
@@ -33,7 +33,7 @@
       </a>
       <a
         href="#contact"
-        class="rounded-lg border border-white/15 px-6 py-3 text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
+        class="rounded-lg border border-line-strong px-6 py-3 text-sm font-medium text-fg transition-colors hover:bg-surface"
       >
         联系我
       </a>
@@ -42,7 +42,7 @@
     <!-- 向下滚动提示 -->
     <a
       href="#about"
-      class="absolute bottom-8 text-white/40 transition-colors hover:text-white"
+      class="absolute bottom-8 text-faint transition-colors hover:text-fg"
       aria-label="向下滚动"
     >
       <svg class="h-6 w-6 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { ref } from 'vue'
 import { projects } from '@/data/projects'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
@@ -18,7 +18,7 @@ useScrollAnimation(root)
       <article
         v-for="project in projects"
         :key="project.id"
-        class="group overflow-hidden rounded-xl border border-white/10 transition-colors hover:border-white/20"
+        class="group overflow-hidden rounded-xl border border-line transition-colors hover:border-line-strong"
       >
         <!-- 项目截图（懒加载） -->
         <img
@@ -30,14 +30,14 @@ useScrollAnimation(root)
 
         <div class="p-6">
           <h3 class="text-xl font-semibold">{{ project.name }}</h3>
-          <p class="mt-3 text-sm text-white/70 leading-relaxed">{{ project.description }}</p>
+          <p class="mt-3 text-sm text-muted leading-relaxed">{{ project.description }}</p>
 
           <!-- 技术栈 -->
           <ul class="mt-4 flex flex-wrap gap-2">
             <li
               v-for="tech in project.stack"
               :key="tech"
-              class="rounded-md bg-white/5 px-2.5 py-1 text-xs text-white/60"
+              class="rounded-md bg-surface px-2.5 py-1 text-xs text-muted"
             >
               {{ tech }}
             </li>
@@ -54,7 +54,7 @@ useScrollAnimation(root)
             查看项目
             <span aria-hidden="true">&rarr;</span>
           </a>
-          <span v-else class="mt-6 inline-block text-sm text-white/40">暂无链接</span>
+          <span v-else class="mt-6 inline-block text-sm text-faint">暂无链接</span>
         </div>
       </article>
     </div>

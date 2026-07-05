@@ -1,11 +1,42 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 
-/* 深色主题基础变量与渐变强调色 */
+/* 语义颜色 token：浅色为默认值 */
 @theme {
-  --color-bg: #0a0a0a;
+  /* 页面背景 */
+  --color-bg: #ffffff;
+  /* 主文字 */
+  --color-fg: #0a0a0a;
+  /* 次要文字 */
+  --color-muted: #4b5563;
+  /* 暗淡文字 */
+  --color-faint: #9ca3af;
+  /* 弱填充背景 */
+  --color-surface: #f3f4f6;
+  /* 悬停填充背景 */
+  --color-surface-2: #e5e7eb;
+  /* 常规边框 */
+  --color-line: #e5e7eb;
+  /* 强调边框 */
+  --color-line-strong: #d1d5db;
+
+  /* 渐变强调色（深浅共用） */
   --color-accent-from: #6366f1;
   --color-accent-via: #a855f7;
   --color-accent-to: #ec4899;
+}
+
+/* 深色主题：.dark 作用在 <html> 上时整体覆盖语义 token */
+@layer base {
+  .dark {
+    --color-bg: #0a0a0a;
+    --color-fg: #ffffff;
+    --color-muted: #a3a3a3;
+    --color-faint: #737373;
+    --color-surface: #1a1a1a;
+    --color-surface-2: #262626;
+    --color-line: #1f1f1f;
+    --color-line-strong: #333333;
+  }
 }
 
 html {
@@ -13,8 +44,8 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 /* 渐变文字工具类 */

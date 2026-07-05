@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { ref } from 'vue'
 import { skills } from '@/data/skills'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
@@ -14,20 +14,22 @@ useScrollAnimation(root)
       关于<span class="text-gradient">我</span>
     </h2>
 
-    <p class="mt-6 max-w-3xl text-white/70 leading-relaxed">
-      我是一名拥有多年经验的全栈开发者，喜欢把复杂的问题拆解成简单的解决方案。
-      工作之余，我也热衷于参与开源社区、撰写技术文章，并持续探索前端工程化与用户体验的最佳实践。
+    <p class="mt-6 max-w-3xl text-muted leading-relaxed">
+      你好，我是王宇航——生于2000年，坐标南京，物联网工程专业。
+      毕业后从事过技术支持、运维和开发等工作，拥有多年的前端开发经验，目前在努力学习新技术拓展自己的技术栈，拥抱 AI 创新技术。
+      我喜欢构建有实际用途的工具，也喜欢把复杂的东西写得清晰易懂。代码是我思考的载体，文字是我表达的方式。
+      工作之余，我也热衷于参与开源社区、撰写技术文章，并持续探索全栈开发和 AI 工具的落地应用。如果你对合作、交流或一起做些有趣的事情感兴趣，欢迎随时联系我。
     </p>
 
     <!-- 技能列表 -->
     <div class="mt-12 grid gap-8 sm:grid-cols-3">
-      <div v-for="group in skills" :key="group.category" class="rounded-xl border border-white/10 p-6">
-        <h3 class="text-lg font-semibold text-white/90">{{ group.category }}</h3>
+      <div v-for="group in skills" :key="group.category" class="rounded-xl border border-line p-6">
+        <h3 class="text-lg font-semibold text-fg">{{ group.category }}</h3>
         <ul class="mt-4 flex flex-wrap gap-2">
           <li
             v-for="item in group.items"
             :key="item"
-            class="rounded-md bg-white/5 px-3 py-1 text-sm text-white/70 transition-colors hover:bg-white/10"
+            class="rounded-md bg-surface px-3 py-1 text-sm text-muted transition-colors hover:bg-surface-2"
           >
             {{ item }}
           </li>

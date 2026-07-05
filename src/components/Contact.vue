@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
 
@@ -19,7 +19,7 @@ const links = [
     <h2 class="text-3xl font-bold sm:text-4xl">
       联系<span class="text-gradient">我</span>
     </h2>
-    <p class="mt-6 text-white/70">欢迎通过以下方式与我交流，一起创造有价值的产品。</p>
+    <p class="mt-6 text-muted">欢迎通过以下方式与我交流，一起创造有价值的产品。</p>
 
     <div class="mt-10 flex flex-wrap justify-center gap-4">
       <a
@@ -28,10 +28,10 @@ const links = [
         :href="item.href"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex min-w-[160px] flex-col rounded-xl border border-white/10 p-4 transition-colors hover:border-white/20 hover:bg-white/5"
+        class="flex min-w-[160px] flex-col rounded-xl border border-line p-4 transition-colors hover:border-line-strong hover:bg-surface"
       >
         <span class="text-sm font-medium text-gradient">{{ item.label }}</span>
-        <span class="mt-1 text-sm text-white/60">{{ item.value }}</span>
+        <span class="mt-1 text-sm text-faint">{{ item.value }}</span>
       </a>
     </div>
   </section>
