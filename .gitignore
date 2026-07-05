@@ -33,3 +33,9 @@ pnpm-debug.log*
 # Vite 缓存
 .vite/
 .vercel
+
+# 本地 Vite 调试残留（开发临时文件）
+.vite-dev.*
+.vite-err2.log
+.vite-out2.log
+.vite-proc.xml
